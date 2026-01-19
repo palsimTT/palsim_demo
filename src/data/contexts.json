@@ -1,0 +1,52 @@
+[
+  {
+    "id": "ctx-001",
+    "winRate": 32,
+    "description": "Forehand topspin rally from backhand corner"
+  },
+  {
+    "id": "ctx-002",
+    "winRate": 45,
+    "description": "Service receive with push return"
+  },
+  {
+    "id": "ctx-003",
+    "winRate": 28,
+    "description": "Counter-attack after block defense"
+  },
+  {
+    "id": "ctx-004",
+    "winRate": 52,
+    "description": "Short serve to middle table position"
+  },
+  {
+    "id": "ctx-005",
+    "winRate": 38,
+    "description": "Backhand flick against short ball"
+  },
+  {
+    "id": "ctx-006",
+    "winRate": 41,
+    "description": "Loop drive from mid-distance rally"
+  },
+  {
+    "id": "ctx-007",
+    "winRate": 35,
+    "description": "Chop defense against heavy topspin"
+  },
+  {
+    "id": "ctx-008",
+    "winRate": 48,
+    "description": "Quick attack at close table distance"
+  },
+  {
+    "id": "ctx-009",
+    "winRate": 29,
+    "description": "Side spin serve to wide forehand"
+  },
+  {
+    "id": "ctx-010",
+    "winRate": 44,
+    "description": "Blocking sequence in fast exchange"
+  }
+]

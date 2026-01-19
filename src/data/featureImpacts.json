@@ -1,0 +1,32 @@
+{
+  "ctx-001": [
+    { "id": "fi-001", "name": "Topspin+ML", "impact": 0.85 },
+    { "id": "fi-002", "name": "Topspin+ML", "impact": 0.72 },
+    { "id": "fi-003", "name": "Topspin+ML", "impact": 0.65 },
+    { "id": "fi-004", "name": "Topspin+ML", "impact": 0.58 },
+    { "id": "fi-005", "name": "Attack+LF", "impact": 0.45 },
+    { "id": "fi-006", "name": "Push+SM", "impact": 0.38 },
+    { "id": "fi-007", "name": "Block+HM", "impact": 0.25 },
+    { "id": "fi-008", "name": "Flick+SB", "impact": 0.18 }
+  ],
+  "ctx-002": [
+    { "id": "fi-001", "name": "Push+SM", "impact": 0.9 },
+    { "id": "fi-002", "name": "Flick+SB", "impact": 0.78 },
+    { "id": "fi-003", "name": "Attack+LM", "impact": 0.62 },
+    { "id": "fi-004", "name": "Topspin+HF", "impact": 0.55 },
+    { "id": "fi-005", "name": "Block+LB", "impact": 0.42 },
+    { "id": "fi-006", "name": "Short+SM", "impact": 0.35 },
+    { "id": "fi-007", "name": "Slide+HM", "impact": 0.22 },
+    { "id": "fi-008", "name": "Lob+LF", "impact": 0.15 }
+  ],
+  "default": [
+    { "id": "fi-001", "name": "Topspin+ML", "impact": 0.8 },
+    { "id": "fi-002", "name": "Topspin+ML", "impact": 0.68 },
+    { "id": "fi-003", "name": "Topspin+ML", "impact": 0.55 },
+    { "id": "fi-004", "name": "Topspin+ML", "impact": 0.48 },
+    { "id": "fi-005", "name": "Attack+LF", "impact": 0.4 },
+    { "id": "fi-006", "name": "Push+SM", "impact": 0.32 },
+    { "id": "fi-007", "name": "Block+HM", "impact": 0.22 },
+    { "id": "fi-008", "name": "Flick+SB", "impact": 0.12 }
+  ]
+}
