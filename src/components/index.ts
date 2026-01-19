@@ -1,5 +1,4 @@
 export { default as Header } from './Header';
-export { default as Navigator } from './Navigator';
 export { default as Predictor } from './Predictor';
 export { default as Simulator } from './Simulator';
 export { default as Logger } from './Logger';

@@ -113,6 +113,7 @@ export async function loadStrokeAnalysis(matchId: string, gameNo: number, rallyN
 
 // 获取Rally视频URL（使用切分后的视频片段）
 export function getVideoUrl(matchId: string, gameNo: number, rallyNo: number): string {
-  // 返回切分后的rally视频片段
-  return `/src/example/rally_clips/${matchId}_G${gameNo}_R${rallyNo}.mp4`;
+  // 返回切分后的rally视频片段，使用public目录
+  // import.meta.env.BASE_URL 会自动处理base路径
+  return `${import.meta.env.BASE_URL}rally_clips/${matchId}_G${gameNo}_R${rallyNo}.mp4`;
 }
