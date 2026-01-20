@@ -61,10 +61,10 @@ interface StrokeAnalysisData {
   forward_propagation: ForwardPropagationItem[];
 }
 
-// 默认Match/Game/Rally
-const DEFAULT_MATCH_ID = '20180526';
-const DEFAULT_GAME_NO = 1;
-const DEFAULT_RALLY_NO = 1;
+// 默认Match/Game/Rally - 使用第一个有数据的案例
+const DEFAULT_MATCH_ID = '20180602';
+const DEFAULT_GAME_NO = 2;
+const DEFAULT_RALLY_NO = 12;
 
 type PredictionDataType = {
   overallWinRate: number;
