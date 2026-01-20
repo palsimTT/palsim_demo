@@ -22,49 +22,49 @@
       "strokeTech": "Reverse",
       "ballPlacement": "FH",
       "context": "",
-      "analysis_file": "rally_analysis_output_v2/20180610_G3_R1/stroke1_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180610_G3_R1/stroke1_analysis.json"
     },
     "stroke2": {
       "player": "player1",
       "strokeTech": "Short",
       "ballPlacement": "MH",
       "context": "p0:Reverse->FH",
-      "analysis_file": "rally_analysis_output_v2/20180610_G3_R1/stroke2_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180610_G3_R1/stroke2_analysis.json"
     },
     "stroke3": {
       "player": "player0",
       "strokeTech": "Short",
       "ballPlacement": "FH",
       "context": "p0:Reverse->FH | p1:Short->MH",
-      "analysis_file": "rally_analysis_output_v2/20180610_G3_R1/stroke3_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180610_G3_R1/stroke3_analysis.json"
     },
     "stroke4": {
       "player": "player1",
       "strokeTech": "Short",
       "ballPlacement": "BH",
       "context": "p0:Reverse->FH | p1:Short->MH | p0:Short->FH",
-      "analysis_file": "rally_analysis_output_v2/20180610_G3_R1/stroke4_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180610_G3_R1/stroke4_analysis.json"
     },
     "stroke5": {
       "player": "player0",
       "strokeTech": "Short",
       "ballPlacement": "FH",
       "context": "p0:Reverse->FH | p1:Short->MH | p0:Short->FH | p1:Short->BH",
-      "analysis_file": "rally_analysis_output_v2/20180610_G3_R1/stroke5_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180610_G3_R1/stroke5_analysis.json"
     },
     "stroke6": {
       "player": "player1",
       "strokeTech": "Topspin",
       "ballPlacement": "FL",
       "context": "p0:Reverse->FH | p1:Short->MH | p0:Short->FH | p1:Short->BH | p0:Short->FH",
-      "analysis_file": "rally_analysis_output_v2/20180610_G3_R1/stroke6_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180610_G3_R1/stroke6_analysis.json"
     },
     "stroke7": {
       "player": "player0",
       "strokeTech": "Topspin",
       "ballPlacement": "",
       "context": "p0:Reverse->FH | p1:Short->MH | p0:Short->FH | p1:Short->BH | p0:Short->FH | p1:Topspin->FL",
-      "analysis_file": "rally_analysis_output_v2/20180610_G3_R1/stroke7_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180610_G3_R1/stroke7_analysis.json"
     }
   }
 }

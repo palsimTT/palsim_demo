@@ -107,6 +107,19 @@ function App() {
   // 选中的推荐项索引
   const [selectedRecommendationIdx, setSelectedRecommendationIdx] = useState<number | null>(null);
   
+  // 打勾状态 - 按stroke分开存储
+  const [checkedByStroke, setCheckedByStroke] = useState<Record<number, {
+    integrated: Set<number>;
+    pitfalls: Set<number>;
+    opportunities: Set<number>;
+  }>>({});
+  
+  // 当前stroke的打勾状态
+  const currentChecked = selectedStrokeIndex !== null ? checkedByStroke[selectedStrokeIndex] : undefined;
+  const checkedIntegrated = currentChecked?.integrated || new Set<number>();
+  const checkedPitfalls = currentChecked?.pitfalls || new Set<number>();
+  const checkedOpportunities = currentChecked?.opportunities || new Set<number>();
+  
   // Adjustment View数据
   const [predictionData, setPredictionData] = useState<PredictionDataType | null>(null);
   const [baseJoint, setBaseJoint] = useState<number[][] | null>(null); // 原始joint矩阵
@@ -344,6 +357,82 @@ function App() {
     setSelectedRecommendationIdx(null);
     setCurrentJoint(jointCopy);
   }, [baseJoint, currentAnalysis]);
+
+  // 从Integrated Adjustment添加Model Adjustment到Expert Adjustment
+  const handleAddModelAdjustment = useCallback((item: ActionRecommendation) => {
+    if (!currentAnalysis) return;
+    
+    const newAdjustment: ExpertAdjustment = {
+      id: `model-${Date.now()}`,
+      description: `Model: ${item.st} ${item.bp}`,
+      winRate: item.winrate * 100,
+    };
+    setExpertAdjustments(prev => [...prev, newAdjustment]);
+  }, [currentAnalysis, setExpertAdjustments]);
+
+  // 切换打勾状态的处理函数
+  const handleToggleIntegrated = useCallback((idx: number) => {
+    if (selectedStrokeIndex === null) return;
+    setCheckedByStroke(prev => {
+      const current = prev[selectedStrokeIndex] || {
+        integrated: new Set<number>(),
+        pitfalls: new Set<number>(),
+        opportunities: new Set<number>(),
+      };
+      const newIntegrated = new Set(current.integrated);
+      if (newIntegrated.has(idx)) {
+        newIntegrated.delete(idx);
+      } else {
+        newIntegrated.add(idx);
+      }
+      return {
+        ...prev,
+        [selectedStrokeIndex]: { ...current, integrated: newIntegrated },
+      };
+    });
+  }, [selectedStrokeIndex]);
+
+  const handleTogglePitfall = useCallback((idx: number) => {
+    if (selectedStrokeIndex === null) return;
+    setCheckedByStroke(prev => {
+      const current = prev[selectedStrokeIndex] || {
+        integrated: new Set<number>(),
+        pitfalls: new Set<number>(),
+        opportunities: new Set<number>(),
+      };
+      const newPitfalls = new Set(current.pitfalls);
+      if (newPitfalls.has(idx)) {
+        newPitfalls.delete(idx);
+      } else {
+        newPitfalls.add(idx);
+      }
+      return {
+        ...prev,
+        [selectedStrokeIndex]: { ...current, pitfalls: newPitfalls },
+      };
+    });
+  }, [selectedStrokeIndex]);
+
+  const handleToggleOpportunity = useCallback((idx: number) => {
+    if (selectedStrokeIndex === null) return;
+    setCheckedByStroke(prev => {
+      const current = prev[selectedStrokeIndex] || {
+        integrated: new Set<number>(),
+        pitfalls: new Set<number>(),
+        opportunities: new Set<number>(),
+      };
+      const newOpportunities = new Set(current.opportunities);
+      if (newOpportunities.has(idx)) {
+        newOpportunities.delete(idx);
+      } else {
+        newOpportunities.add(idx);
+      }
+      return {
+        ...prev,
+        [selectedStrokeIndex]: { ...current, opportunities: newOpportunities },
+      };
+    });
+  }, [selectedStrokeIndex]);
 
   // 删除专家调整
   const handleDeleteExpertAdjustment = useCallback((id: string) => {
@@ -1012,7 +1101,14 @@ function App() {
               onSelectRecommendation={handleSelectRecommendation}
               onAddExpertAdjustment={handleAddExpertAdjustment}
               onDeleteExpertAdjustment={handleDeleteExpertAdjustment}
+              onAddModelAdjustment={handleAddModelAdjustment}
               baselineWinrate={currentAnalysis?.baseline_winrate}
+              checkedIntegrated={checkedIntegrated}
+              checkedPitfalls={checkedPitfalls}
+              checkedOpportunities={checkedOpportunities}
+              onToggleIntegrated={handleToggleIntegrated}
+              onTogglePitfall={handleTogglePitfall}
+              onToggleOpportunity={handleToggleOpportunity}
             />
             </div>
           </div>

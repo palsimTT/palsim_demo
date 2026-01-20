@@ -1,3 +1,5 @@
+import removeIcon from '../../assets/remove.png';
+
 // 来自stroke分析文件的推荐数据结构
 export interface ActionRecommendation {
   st: string;
@@ -27,7 +29,15 @@ interface LogViewProps {
   onSelectRecommendation: (idx: number) => void; // 选中推荐项
   onAddExpertAdjustment: () => void;
   onDeleteExpertAdjustment: (id: string) => void; // 删除Expert记录
+  onAddModelAdjustment?: (item: ActionRecommendation) => void; // 从Integrated复制到Expert
   baselineWinrate?: number;
+  // 打勾状态
+  checkedIntegrated?: Set<number>;
+  checkedPitfalls?: Set<number>;
+  checkedOpportunities?: Set<number>;
+  onToggleIntegrated?: (idx: number) => void;
+  onTogglePitfall?: (idx: number) => void;
+  onToggleOpportunity?: (idx: number) => void;
 }
 
 // 推荐项组件 - 用于Integrated Adjustment，显示winrate_change
@@ -35,10 +45,14 @@ const RecommendationItem = ({
   item,
   isSelected,
   onClick,
+  isChecked,
+  onToggleCheck,
 }: { 
   item: ActionRecommendation;
   isSelected?: boolean;
   onClick?: () => void;
+  isChecked?: boolean;
+  onToggleCheck?: () => void;
 }) => {
   // winrate_change 是小数形式，转换为百分比
   const changePct = (item.winrate_change || 0) * 100;
@@ -76,6 +90,23 @@ const RecommendationItem = ({
       }}>
         {isPositive ? '+' : ''}{changePct.toFixed(2)}%
       </div>
+      {onToggleCheck && (
+        <input
+          type="checkbox"
+          checked={isChecked || false}
+          onChange={(e) => {
+            e.stopPropagation();
+            onToggleCheck();
+          }}
+          onClick={(e) => e.stopPropagation()}
+          style={{
+            width: '18px',
+            height: '18px',
+            cursor: 'pointer',
+            accentColor: '#30C72E',
+          }}
+        />
+      )}
     </div>
   );
 };
@@ -85,9 +116,13 @@ const RecommendationItem = ({
 const SimpleRecommendationItem = ({ 
   item,
   colorType, // 'red' for pitfalls, 'green' for opportunities
+  isChecked,
+  onToggleCheck,
 }: { 
   item: ActionRecommendation;
   colorType: 'red' | 'green';
+  isChecked?: boolean;
+  onToggleCheck?: () => void;
 }) => {
   return (
     <div 
@@ -112,6 +147,22 @@ const SimpleRecommendationItem = ({
       <div style={{ flex: 1, fontSize: '14px', color: '#333' }}>
         {item.st} {item.bp}
       </div>
+      {onToggleCheck && (
+        <input
+          type="checkbox"
+          checked={isChecked || false}
+          onChange={(e) => {
+            e.stopPropagation();
+            onToggleCheck();
+          }}
+          style={{
+            width: '18px',
+            height: '18px',
+            cursor: 'pointer',
+            accentColor: colorType === 'red' ? '#C10707' : '#01A70C',
+          }}
+        />
+      )}
     </div>
   );
 };
@@ -156,7 +207,7 @@ const ExpertItem = ({
       {item.description}
     </div>
     <img
-      src="/src/assets/remove.png"
+      src={removeIcon}
       alt="Delete"
       onClick={(e) => {
         e.stopPropagation();
@@ -198,6 +249,13 @@ const LogView = ({
   onSelectRecommendation,
   onAddExpertAdjustment,
   onDeleteExpertAdjustment,
+  onAddModelAdjustment,
+  checkedIntegrated,
+  checkedPitfalls,
+  checkedOpportunities,
+  onToggleIntegrated,
+  onTogglePitfall,
+  onToggleOpportunity,
 }: LogViewProps) => {
   return (
     <div style={{
@@ -232,6 +290,14 @@ const LogView = ({
                 item={item}
                 isSelected={selectedRecommendationIdx === idx}
                 onClick={() => onSelectRecommendation(idx)}
+                isChecked={checkedIntegrated?.has(idx)}
+                onToggleCheck={onToggleIntegrated ? () => {
+                  onToggleIntegrated(idx);
+                  // 打勾时复制到Expert Adjustment
+                  if (!checkedIntegrated?.has(idx) && onAddModelAdjustment) {
+                    onAddModelAdjustment(item);
+                  }
+                } : undefined}
               />
             ))
           ) : (
@@ -248,6 +314,8 @@ const LogView = ({
                 key={`pitfall-${idx}`} 
                 item={item}
                 colorType="red"
+                isChecked={checkedPitfalls?.has(idx)}
+                onToggleCheck={onTogglePitfall ? () => onTogglePitfall(idx) : undefined}
               />
             ))
           ) : (
@@ -264,6 +332,8 @@ const LogView = ({
                 key={`opportunity-${idx}`} 
                 item={item}
                 colorType="green"
+                isChecked={checkedOpportunities?.has(idx)}
+                onToggleCheck={onToggleOpportunity ? () => onToggleOpportunity(idx) : undefined}
               />
             ))
           ) : (

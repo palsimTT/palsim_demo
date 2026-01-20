@@ -22,42 +22,42 @@
       "strokeTech": "Reverse",
       "ballPlacement": "MS",
       "context": "",
-      "analysis_file": "rally_analysis_output_v2/20180602_G3_R6/stroke1_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180602_G3_R6/stroke1_analysis.json"
     },
     "stroke2": {
       "player": "player1",
       "strokeTech": "Short",
       "ballPlacement": "MS",
       "context": "p0:Reverse->MS",
-      "analysis_file": "rally_analysis_output_v2/20180602_G3_R6/stroke2_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180602_G3_R6/stroke2_analysis.json"
     },
     "stroke3": {
       "player": "player0",
       "strokeTech": "Push",
       "ballPlacement": "BL",
       "context": "p0:Reverse->MS | p1:Short->MS",
-      "analysis_file": "rally_analysis_output_v2/20180602_G3_R6/stroke3_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180602_G3_R6/stroke3_analysis.json"
     },
     "stroke4": {
       "player": "player1",
       "strokeTech": "Topspin",
       "ballPlacement": "ML",
       "context": "p0:Reverse->MS | p1:Short->MS | p0:Push->BL",
-      "analysis_file": "rally_analysis_output_v2/20180602_G3_R6/stroke4_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180602_G3_R6/stroke4_analysis.json"
     },
     "stroke5": {
       "player": "player0",
       "strokeTech": "Topspin",
       "ballPlacement": "FL",
       "context": "p0:Reverse->MS | p1:Short->MS | p0:Push->BL | p1:Topspin->ML",
-      "analysis_file": "rally_analysis_output_v2/20180602_G3_R6/stroke5_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180602_G3_R6/stroke5_analysis.json"
     },
     "stroke6": {
       "player": "player1",
       "strokeTech": "Block",
       "ballPlacement": "",
       "context": "p0:Reverse->MS | p1:Short->MS | p0:Push->BL | p1:Topspin->ML | p0:Topspin->FL",
-      "analysis_file": "rally_analysis_output_v2/20180602_G3_R6/stroke6_analysis.json"
+      "analysis_file": "rally_analysis_output_test/20180602_G3_R6/stroke6_analysis.json"
     }
   }
 }
