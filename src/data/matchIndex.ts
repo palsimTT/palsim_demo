@@ -43,9 +43,8 @@ export const MATCHES: MatchInfo[] = [
     name: '2018日本公开赛',
     videoFile: VIDEO_FILES['20180610'],
     games: [
-      { id: 3, rallies: [1, 12] },
+      { id: 3, rallies: [12] },
       { id: 4, rallies: [5] },
-      { id: 5, rallies: [12] },
     ],
   },
   {
@@ -53,7 +52,6 @@ export const MATCHES: MatchInfo[] = [
     name: '2019中国公开赛',
     videoFile: VIDEO_FILES['20190602'],
     games: [
-      { id: 1, rallies: [18] },
       { id: 5, rallies: [10] },
     ],
   },
