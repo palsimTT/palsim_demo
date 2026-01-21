@@ -195,7 +195,6 @@ const DistributionGrid = ({
                 <span style={{
                   fontSize: '12px',
                   color: isHighlightedZone ? '#FFA500' : '#696969',
-                  fontWeight: isHighlightedZone ? 700 : 400,
                   writingMode: 'vertical-rl',
                   transform: 'rotate(180deg)',
                   whiteSpace: 'nowrap',
@@ -228,7 +227,6 @@ const DistributionGrid = ({
                   <span style={{ 
                     fontSize: '12px', 
                     color: isHighlightedRow ? '#FFA500' : '#696969',
-                    fontWeight: isHighlightedRow ? 700 : 400,
                   }}>{pos}</span>
                 </div>
               );
@@ -300,7 +298,6 @@ const DistributionGrid = ({
                 <span style={{
                   fontSize: '11px',
                   color: isHighlightedCol ? '#FFA500' : '#696969',
-                  fontWeight: isHighlightedCol ? 700 : 400,
                   whiteSpace: 'nowrap',
                   transform: 'rotate(-45deg)',
                   transformOrigin: 'left bottom',
