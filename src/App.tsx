@@ -301,6 +301,8 @@ function App() {
         setSelectedRallyNo(match.games[0].rallies[0]);
       }
     }
+    // 清空打勾状态
+    setCheckedByStroke({});
   }, []);
 
   const handleGameChange = useCallback((gameNo: number) => {
@@ -311,10 +313,14 @@ function App() {
     if (game && game.rallies.length > 0) {
       setSelectedRallyNo(game.rallies[0]);
     }
+    // 清空打勾状态
+    setCheckedByStroke({});
   }, [selectedMatchId]);
 
   const handleRallyChange = useCallback((rallyNo: number) => {
     setSelectedRallyNo(rallyNo);
+    // 清空打勾状态
+    setCheckedByStroke({});
   }, []);
 
   // 刷新adjustment数据（重置为原始值，并更新当前选中的Expert记录）
