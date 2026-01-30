@@ -1,0 +1,92 @@
+{
+  "timestamp": "20260120_224911",
+  "version": "v2_forward_propagation_cached",
+  "input_dir": "/home/bangyi/ccsimnet/pipeline/rally_info",
+  "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test",
+  "total_rallies": 10,
+  "top_k": 5,
+  "timing_info": {
+    "timed_rallies": 10,
+    "timed_strokes": 58,
+    "total_time_seconds": 540.9031100273132,
+    "avg_time_per_rally_seconds": 54.090311002731326,
+    "avg_time_per_stroke_seconds": 9.32591569012609
+  },
+  "cache_stats": {
+    "distribution": {
+      "hits": 296,
+      "misses": 492,
+      "hit_rate": 0.3756345177664975
+    },
+    "winrate": {
+      "hits": 0,
+      "misses": 58,
+      "hit_rate": 0.0
+    },
+    "total_hits": 296,
+    "total_misses": 550,
+    "total_hit_rate": 0.34988179669030733
+  },
+  "results": [
+    {
+      "rally_name": "20180602_G2_R12",
+      "processed_strokes": 8,
+      "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180602_G2_R12",
+      "updated_rally_file": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180602_G2_R12_updated.json"
+    },
+    {
+      "rally_name": "20180602_G3_R6",
+      "processed_strokes": 6,
+      "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180602_G3_R6",
+      "updated_rally_file": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180602_G3_R6_updated.json"
+    },
+    {
+      "rally_name": "20180610_G3_R1",
+      "processed_strokes": 7,
+      "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180610_G3_R1",
+      "updated_rally_file": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180610_G3_R1_updated.json"
+    },
+    {
+      "rally_name": "20180610_G3_R12",
+      "processed_strokes": 5,
+      "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180610_G3_R12",
+      "updated_rally_file": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180610_G3_R12_updated.json"
+    },
+    {
+      "rally_name": "20180610_G4_R5",
+      "processed_strokes": 4,
+      "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180610_G4_R5",
+      "updated_rally_file": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180610_G4_R5_updated.json"
+    },
+    {
+      "rally_name": "20180610_G5_R12",
+      "processed_strokes": 6,
+      "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180610_G5_R12",
+      "updated_rally_file": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20180610_G5_R12_updated.json"
+    },
+    {
+      "rally_name": "20190602_G1_R18",
+      "processed_strokes": 5,
+      "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20190602_G1_R18",
+      "updated_rally_file": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20190602_G1_R18_updated.json"
+    },
+    {
+      "rally_name": "20190602_G5_R10",
+      "processed_strokes": 5,
+      "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20190602_G5_R10",
+      "updated_rally_file": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20190602_G5_R10_updated.json"
+    },
+    {
+      "rally_name": "20191005_G1_R1",
+      "processed_strokes": 7,
+      "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20191005_G1_R1",
+      "updated_rally_file": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20191005_G1_R1_updated.json"
+    },
+    {
+      "rally_name": "20191005_G3_R14",
+      "processed_strokes": 5,
+      "output_dir": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20191005_G3_R14",
+      "updated_rally_file": "/home/bangyi/ccsimnet/pipeline/rally_analysis_output_test/20191005_G3_R14_updated.json"
+    }
+  ]
+}
